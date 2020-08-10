@@ -1,0 +1,41 @@
+<div class="registration-form">
+  <h2>Sign up</h2>
+  <h4>
+    <a [routerLink]="['/login']">
+      Already have an account?
+    </a>
+  </h4>
+  <form
+    class="registration-form__form"
+    [formGroup]="signUpForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <app-text-input
+      [placeholder]="'email'"
+      [label]="'Email'"
+      [inputType]="'email'"
+      [inputFormGroup]="signUpForm"
+      [inputFormControlName]="'email'"
+    ></app-text-input>
+    <app-text-input
+      [placeholder]="'username'"
+      [label]="'Username'"
+      [inputFormGroup]="signUpForm"
+      [inputFormControlName]="'userName'"
+    ></app-text-input>
+    <app-text-input
+      [placeholder]="'password'"
+      [label]="'Password'"
+      [inputType]="'password'"
+      [inputFormGroup]="signUpForm"
+      [inputFormControlName]="'password'"
+    ></app-text-input>
+    <button
+      class="btn waves-effect waves-light btn-large"
+      type="submit"
+      name="action"
+    >
+      Sign Up
+    </button>
+  </form>
+</div>
