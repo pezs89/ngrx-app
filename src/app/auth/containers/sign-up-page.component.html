@@ -1,0 +1,6 @@
+<div class="register-page">
+  <app-sign-up-form
+    *ngIf="!(isLoading$ | async)"
+    (signUp)="onSignUp($event)"
+  ></app-sign-up-form>
+</div>

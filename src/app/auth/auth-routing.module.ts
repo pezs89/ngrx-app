@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RegisterPageComponent } from './containers/register-page.component';
+import { SignUpPageComponent } from './containers/sign-up-page.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/register' },
+  { path: '', pathMatch: 'full', redirectTo: '/sign-up' },
   {
-    path: 'register',
-    component: RegisterPageComponent,
+    path: 'sign-up',
+    component: SignUpPageComponent,
   },
 ];
 

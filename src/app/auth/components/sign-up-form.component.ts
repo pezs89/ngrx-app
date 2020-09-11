@@ -1,14 +1,14 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { SignUp } from '../models/sign-up';
+import { SignUpUser } from '../models/sign-up-user';
 
 @Component({
-  selector: 'app-register-form',
-  templateUrl: 'register-form.component.html',
-  styleUrls: ['./register-form.component.scss'],
+  selector: 'app-sign-up-form',
+  templateUrl: 'sign-up-form.component.html',
+  styleUrls: ['./sign-up-form.component.scss'],
 })
-export class RegisterFormComponent implements OnInit {
-  @Output() signUp = new EventEmitter<SignUp>();
+export class SignUpFormComponent implements OnInit {
+  @Output() signUp = new EventEmitter<SignUpUser>();
 
   signUpForm: FormGroup;
 
@@ -24,7 +24,7 @@ export class RegisterFormComponent implements OnInit {
 
   onSubmit() {
     if (this.signUpForm.valid) {
-      const { email, password, userName }: SignUp = this.signUpForm.value;
+      const { email, password, userName }: SignUpUser = this.signUpForm.value;
       this.signUp.emit({ userName, email, password });
     }
   }
