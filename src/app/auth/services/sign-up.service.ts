@@ -15,7 +15,7 @@ export class SignUpService {
   signUp(signUpData: SignUpUser): Observable<Auth> {
     return this.http
       .post<AuthResponse>(`${environment.apiUrl}/users`, {
-        data: signUpData,
+        user: signUpData,
       })
       .pipe(map((response: AuthResponse) => response.user));
   }

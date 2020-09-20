@@ -13,8 +13,13 @@ export const initialState: State = {
 
 export const reducer = createReducer(
   initialState,
-  on(SignUpActions.signUpRequest, (state) => ({
-    ...state,
-    isLoading: !state.isLoading,
-  }))
+  on(
+    SignUpActions.signUpRequest,
+    SignUpActions.signUpError,
+    SignUpActions.signUpSuccess,
+    (state) => ({
+      ...state,
+      isLoading: !state.isLoading,
+    })
+  )
 );

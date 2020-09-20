@@ -11,6 +11,7 @@ import { AuthRoutingModule } from './auth-routing.module';
 import { SignUpFormComponent } from './components/sign-up-form.component';
 import { SharedModule } from '../shared/shared.module';
 import { SignUpEffects } from './effects/sign-up.effects';
+import { PrimeNgModule } from '../primeng/prime-ng.module';
 
 const CONTAINERS = [SignUpPageComponent];
 const COMPONENTS = [SignUpFormComponent];
@@ -23,6 +24,7 @@ const COMPONENTS = [SignUpFormComponent];
     SharedModule,
     StoreModule.forFeature(fromAuth.authFeatureKey, fromAuth.reducers),
     EffectsModule.forFeature([SignUpEffects]),
+    PrimeNgModule,
   ],
   exports: [],
   declarations: [CONTAINERS, COMPONENTS],

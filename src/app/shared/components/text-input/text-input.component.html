@@ -1,9 +1,10 @@
-<div class="input-field" [formGroup]="inputFormGroup">
+<div class="p-float-label" [formGroup]="inputFormGroup">
   <input
-    [id]="inputFormControlName"
+    id="float-input p-inputtext-lg"
     [formControlName]="inputFormControlName"
     [type]="inputType"
     class="validate"
+    pInputText
   />
-  <label [for]="inputFormControlName">{{ label }}</label>
+  <label for="float-iput">{{ label }}</label>
 </div>

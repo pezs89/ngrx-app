@@ -16,7 +16,7 @@ export class SignUpFormComponent implements OnInit {
 
   ngOnInit() {
     this.signUpForm = this.fb.group({
-      userName: ['', Validators.required],
+      username: ['', Validators.required],
       email: ['', Validators.compose([Validators.required, Validators.email])],
       password: ['', Validators.required],
     });
@@ -24,8 +24,8 @@ export class SignUpFormComponent implements OnInit {
 
   onSubmit() {
     if (this.signUpForm.valid) {
-      const { email, password, userName }: SignUpUser = this.signUpForm.value;
-      this.signUp.emit({ userName, email, password });
+      const { email, password, username }: SignUpUser = this.signUpForm.value;
+      this.signUp.emit({ username, email, password });
     }
   }
 }

@@ -1,7 +1,5 @@
 .registration-form {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-  min-width: 500px;
-  padding: 20px;
+  min-width: 360px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,5 +8,8 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+  }
+  &__button {
+    align-self: center;
   }
 }
