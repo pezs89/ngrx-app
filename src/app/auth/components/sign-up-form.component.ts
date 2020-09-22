@@ -1,4 +1,10 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  ViewEncapsulation,
+} from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { SignUpUser } from '../models/sign-up-user';
 
@@ -6,6 +12,7 @@ import { SignUpUser } from '../models/sign-up-user';
   selector: 'app-sign-up-form',
   templateUrl: 'sign-up-form.component.html',
   styleUrls: ['./sign-up-form.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class SignUpFormComponent implements OnInit {
   @Output() signUp = new EventEmitter<SignUpUser>();
@@ -17,7 +24,7 @@ export class SignUpFormComponent implements OnInit {
   ngOnInit() {
     this.signUpForm = this.fb.group({
       username: ['', Validators.required],
-      email: ['', Validators.compose([Validators.required, Validators.email])],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
     });
   }
